@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head"></head>
+<body>
+    <div th:replace="fragments/common :: navbar"></div>
+    
+    <div class="content-wrapper">
+        <div class="container">
+        <div class="card">
+            <h2><i class="fas fa-search icon"></i> Cari Detail Kelompok</h2>
+            <form action="detail-kelompok" method="GET">
+                <div class="mb-3">
+                    <label for="npm" class="form-label">NPM Mahasiswa</label>
+                    <input type="text" class="form-control" id="npm" name="npm" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/common :: footer"></div>
+</body>
+</html>

@@ -7,22 +7,21 @@
     <div class="content-wrapper">
         <div class="container">
             <!-- Kartu statistik -->
-            <div class="row">
-                <div class="col-md-6 mb-3 d-flex align-items-stretch">
-                    <div class="card square-card">
-                        <div class="card-body">
-                            <i class="fas fa-user-graduate icon fa-3x"></i>
-                            <h3 th:text="${totalMahasiswa}" class="mt-3">0</h3>
-                            <p>Total Mahasiswa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3 d-flex align-items-stretch">
-                    <div class="card square-card">
-                        <div class="card-body">
-                            <i class="fas fa-chalkboard-teacher icon fa-3x"></i>
-                            <h3 th:text="${totalMentor}" class="mt-3">0</h3>
-                            <p>Total Kelompok</p>
+            <!-- Video section - updated -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3 class="text-center mb-4">Video OKK UI</h3>
+                    <div class="card p-4">
+                        <div class="video-container">
+                            <div class="ratio ratio-16x9">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/9rgKN3eBOAM" 
+                                    title="OKK UI Video"
+                                    id="youtubeVideo"
+                                    frameborder="0"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,67 +71,58 @@
                     </div>
                 </div>
             </div>
-            <!-- Video -->
-            <div class="row mt-4">
-                <div class="col-md-12">
-                    <h3 class="text-center mb-4">Video OKK UI</h3>
-                    <div class="video-section">
-                        <div class="card video-card">
-                            <div class="video-container">
-                                <div class="ratio ratio-16x9">
-                                    <iframe 
-                                        src="https://www.youtube.com/embed/lsVQKKqm4iQ?enablejsapi=1" 
-                                        title="OKK UI Video"
-                                        id="youtubeVideo"
-                                        frameborder="0"
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Tambahkan sebelum tag penutup container -->
 
+<!-- Modal Popup 1 -->
+<div class="modal fade" id="popup1" tabindex="-1" aria-labelledby="popup1Label" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: var(--salmon-pink);">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white w-100 text-center fs-3 fw-bold" id="popup1Label">MERCH CANTIKNYA KAKA</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <a href="/merch" class="btn btn-outline-light btn-lg px-5">LIHAT MERCH</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Popup 2 -->
+<div class="modal fade" id="popup2" tabindex="-1" aria-labelledby="popup2Label" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #0c4c8a;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white w-100 text-center fs-3 fw-bold" id="popup2Label">DILIHAT DULU AJA KAKA</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <a href="/merch" class="btn btn-outline-light btn-lg px-5">LIHAT MERCH</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Popup 3 -->
+<div class="modal fade" id="popup3" tabindex="-1" aria-labelledby="popup3Label" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #808080;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white w-100 text-center fs-3 fw-bold" id="popup3Label">YAKIN NIHHH??</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <a href="/merch" class="btn btn-outline-light btn-lg px-5">LIHAT MERCH</a>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Tambahkan sebelum tag penutup container -->
 
-<!-- Komentar Terbaik -->
-<div class="row mt-4">
-    <div class="col-md-12">
-        <div class="card p-4">
-            <h3 class="text-center mb-4">Komentar Terbaik</h3>
-            
-            <!-- Jika tidak ada komentar -->
-            <div th:if="${komentarTerbaik.empty}" class="text-center">
-                <p>Belum ada komentar dengan nilai tinggi.</p>
-            </div>
-            
-            <!-- Daftar komentar - layout horizontal dengan scroll -->
-            <div th:unless="${komentarTerbaik.empty}" class="d-flex overflow-auto pb-3">
-                <div th:each="komentar : ${komentarTerbaik}" class="me-3" style="min-width: 300px; max-width: 300px;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="card-text mb-2" th:text="${komentar.isiKomentar}">Isi komentar</div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary" th:text="'Nilai: ' + ${komentar.nilai}">Nilai: 9</span>
-                                <small class="text-muted" th:text="${#temporals.format(komentar.waktu, 'dd MMM yyyy')}">01 Jan 2023</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tombol Berikan Komentar -->
-            <div class="text-center mt-4">
-                <a href="/komentar/halaman" class="btn btn-primary">
-                    <i class="fas fa-comment"></i> Berikan Komentar
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+
 
             <!-- Elemen audio untuk background music (disembunyikan) -->
             <audio id="bgMusic" autoplay loop style="display:none;">
@@ -183,6 +173,79 @@
     });
     </script>
     
+    <!-- Tambahkan script ini di bagian bawah, sebelum tag penutup </body> -->
+<script>
+    // Script untuk popup berurutan
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cek apakah popup sudah ditampilkan dalam session ini
+        if (!sessionStorage.getItem('popupsShown')) {
+            // Tampilkan popup pertama
+            const popup1 = new bootstrap.Modal(document.getElementById('popup1'));
+            popup1.show();
+            
+            // Ketika popup pertama ditutup, tampilkan popup kedua
+            document.getElementById('popup1').addEventListener('hidden.bs.modal', function() {
+                const popup2 = new bootstrap.Modal(document.getElementById('popup2'));
+                popup2.show();
+                
+                // Ketika popup kedua ditutup, tampilkan popup ketiga
+                document.getElementById('popup2').addEventListener('hidden.bs.modal', function() {
+                    const popup3 = new bootstrap.Modal(document.getElementById('popup3'));
+                    popup3.show();
+                    
+                    // Setelah popup ketiga ditutup, tandai bahwa semua popup sudah ditampilkan
+                    document.getElementById('popup3').addEventListener('hidden.bs.modal', function() {
+                        sessionStorage.setItem('popupsShown', 'true');
+                    });
+                });
+            });
+        }
+        
+        // Membuat seluruh area popup bisa diklik untuk redirect ke merch
+        document.querySelectorAll('.modal-content').forEach(modal => {
+            modal.style.cursor = 'pointer';
+            modal.addEventListener('click', function(e) {
+                // Jika yang diklik bukan tombol close
+                if (!e.target.classList.contains('btn-close')) {
+                    window.location.href = '/merch';
+                }
+            });
+        });
+    });
+</script>
+
     <div th:replace="fragments/common :: footer"></div>
 </body>
 </html>
+
+<style>
+    /* Video styling */
+    .video-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .video-container {
+        padding: 0;
+        background-color: #000;
+    }
+    
+    .ratio-16x9 {
+        aspect-ratio: 16/9;
+        height: 500px; /* Tambahkan tinggi yang lebih besar */
+    }
+    
+    /* Ensure video has same width as timeline card */
+    @media (min-width: 768px) {
+        .video-section {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    
+    /* Remove unnecessary video-card class styling */
+    .card {
+        overflow: hidden;
+        width: 100%; /* Pastikan card memiliki lebar penuh */
+    }
+</style>

@@ -1,0 +1,9 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "chmod +x ./gradlew && ./gradlew bootJar"
+
+[deploy]
+startCommand = "java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"

@@ -1,10 +1,8 @@
 package demo.controller;
 
-import demo.model.Komentar;
 import demo.repository.MahasiswaDb;
 import demo.repository.MentorDb;
 import demo.repository.KelompokDb;
-import demo.service.KomentarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +23,6 @@ public class HomeController {
     @Autowired
     private KelompokDb kelompokDb;
     
-    @Autowired
-    private KomentarService komentarService;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -38,15 +34,6 @@ public class HomeController {
         model.addAttribute("totalMentor", totalMentor);
         model.addAttribute("totalKelompok", totalKelompok);
         
-        // Ambil komentar terbaik (max 5 komentar dengan nilai > 7)
-        List<Komentar> komentarList = komentarService.ambilSemuaKomentar();
-        List<Komentar> komentarTerbaik = komentarList.stream()
-                .filter(k -> k.getNilai() > 7)
-                .limit(5)
-                .collect(Collectors.toList());
-        
-        model.addAttribute("komentarTerbaik", komentarTerbaik);
-        
         return "index";
     }
 
@@ -55,13 +42,25 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping("/merch")
-    public String showMerchPage() {
-        return "merch";
-    }
-
     @GetMapping("/lirik-lagu")
     public String lirikLagu() {
     return "lirik-lagu";
 }
+
+    @GetMapping("/helpdesk")
+    public String helpdesk() {
+        return "helpdesk";
+    }
+
+    @GetMapping("/helpdesk/ganjil")
+    public String helpdeskGanjil(Model model) {
+        model.addAttribute("npmType", "ganjil");
+        return "helpdesk-detail";
+    }
+
+    @GetMapping("/helpdesk/genap")
+    public String helpdeskGenap(Model model) {
+        model.addAttribute("npmType", "genap");
+        return "helpdesk-detail";
+    }
 }

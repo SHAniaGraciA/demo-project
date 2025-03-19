@@ -6,6 +6,12 @@
     
     <div class="content-wrapper py-5">
         <div class="container">
+            <div class="container">
+                <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span th:text="${success}"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
             <h2 class="text-center mb-4">Merchandise OKK UI</h2>
             <p class="text-center mb-5">Dapatkan merchandise eksklusif OKK UI untuk mengenang momen spesial orientasi kampusmu!</p>
             
@@ -18,7 +24,10 @@
                             <h5 class="card-title">T-Shirt OKK UI</h5>
                             <p class="card-text">T-shirt eksklusif dengan logo OKK UI. Tersedia dalam berbagai ukuran.</p>
                             <p class="fw-bold">Rp120.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="T-Shirt OKK UI" data-merch-price="120000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -31,7 +40,10 @@
                             <h5 class="card-title">Mug OKK UI</h5>
                             <p class="card-text">Mug keramik dengan logo OKK UI, untuk menemani sesi belajarmu.</p>
                             <p class="fw-bold">Rp75.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Mug OKK UI" data-merch-price="75000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -44,7 +56,10 @@
                             <h5 class="card-title">Topi OKK UI</h5>
                             <p class="card-text">Topi baseball dengan logo OKK UI untuk melindungi dari teriknya matahari.</p>
                             <p class="fw-bold">Rp85.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Topi OKK UI" data-merch-price="85000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -57,7 +72,10 @@
                             <h5 class="card-title">Notebook OKK UI</h5>
                             <p class="card-text">Notebook hardcover untuk mencatat ide-ide brillianmu selama kuliah.</p>
                             <p class="fw-bold">Rp50.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Notebook OKK UI" data-merch-price="50000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -70,7 +88,10 @@
                             <h5 class="card-title">Pen Set OKK UI</h5>
                             <p class="card-text">Set pulpen eksklusif dengan logo OKK UI dalam kotak premium.</p>
                             <p class="fw-bold">Rp65.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Pen Set OKK UI" data-merch-price="65000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +104,10 @@
                             <h5 class="card-title">Laptop Sleeve OKK UI</h5>
                             <p class="card-text">Pelindung laptop dengan logo OKK UI, tersedia untuk ukuran 13"-15".</p>
                             <p class="fw-bold">Rp150.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Laptop Sleeve OKK UI" data-merch-price="150000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -96,7 +120,10 @@
                             <h5 class="card-title">Tumbler OKK UI</h5>
                             <p class="card-text">Tumbler stainless steel yang menjaga minumanmu tetap dingin/panas.</p>
                             <p class="fw-bold">Rp130.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Tumbler OKK UI" data-merch-price="130000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -109,7 +136,10 @@
                             <h5 class="card-title">Stiker Pack OKK UI</h5>
                             <p class="card-text">Set stiker dengan berbagai desain OKK UI untuk mempercantik gadgetmu.</p>
                             <p class="fw-bold">Rp25.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Stiker Pack OKK UI" data-merch-price="25000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +152,10 @@
                             <h5 class="card-title">Lanyard OKK UI</h5>
                             <p class="card-text">Lanyard dengan logo OKK UI untuk gantungan kartu mahasiswamu.</p>
                             <p class="fw-bold">Rp40.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Lanyard OKK UI" data-merch-price="40000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +168,10 @@
                             <h5 class="card-title">Masker OKK UI</h5>
                             <p class="card-text">Masker kain premium dengan logo OKK UI, dapat dicuci ulang.</p>
                             <p class="fw-bold">Rp35.000</p>
-                            <button class="btn btn-primary">Beli Sekarang</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#merchModal" 
+                                    data-merch-name="Masker OKK UI" data-merch-price="35000">
+                                Beli Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -143,6 +179,146 @@
         </div>
     </div>
     
+    <!-- Modal Popup Form -->
+    <div class="modal fade" id="merchModal" tabindex="-1" aria-labelledby="merchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="merchModalLabel">Pembelian Merchandise</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/merch/order" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" id="merchName" name="merchName">
+                        <input type="hidden" id="merchPrice" name="merchPrice">
+                        
+                        <div class="mb-3">
+                            <label for="buyerName" class="form-label">Nama Pembeli</label>
+                            <input type="text" class="form-control" id="buyerName" name="buyerName" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="buyerNpm" class="form-label">NPM</label>
+                            <input type="text" class="form-control" id="buyerNpm" name="buyerNpm" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="faculty" class="form-label">Fakultas</label>
+                            <select class="form-select" id="faculty" name="faculty" required>
+                                <option value="" selected disabled>Pilih Fakultas</option>
+                                <option value="FASILKOM">Ilmu Komputer</option>
+                                <option value="FIB">Ilmu Budaya</option>
+                                <option value="FK">Kedokteran</option>
+                                <option value="FKG">Kedokteran Gigi</option>
+                                <option value="FEB">Ekonomi dan Bisnis</option>
+                                <option value="FH">Hukum</option>
+                                <option value="FISIP">Ilmu Sosial dan Ilmu Politik</option>
+                                <option value="FT">Teknik</option>
+                                <option value="FPsi">Psikologi</option>
+                                <option value="FMIPA">Matematika dan Ilmu Pengetahuan Alam</option>
+                                <option value="FKM">Kesehatan Masyarakat</option>
+                                <option value="FIK">Ilmu Keperawatan</option>
+                                <option value="FF">Farmasi</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label">Jumlah Item</label>
+                            <div class="input-group">
+                                <button type="button" class="btn btn-outline-secondary decrease-qty">-</button>
+                                <input type="number" class="form-control text-center" id="quantity" name="quantity" value="1" min="1" required>
+                                <button type="button" class="btn btn-outline-secondary increase-qty">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Total Harga</label>
+                            <p class="form-control-static" id="totalPrice">Rp0</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Konfirmasi Pembelian</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <div th:replace="fragments/common :: footer"></div>
+    
+    <!-- Tambahkan kode ini tepat sebelum tag penutup </body> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the modal
+        const merchModal = document.getElementById('merchModal');
+        
+        // When the modal is shown
+        merchModal.addEventListener('show.bs.modal', function(event) {
+            // Button that triggered the modal
+            const button = event.relatedTarget;
+            
+            // Extract info from data-* attributes
+            const merchName = button.getAttribute('data-merch-name');
+            const merchPrice = button.getAttribute('data-merch-price');
+            
+            // Update the modal's hidden fields
+            document.getElementById('merchName').value = merchName;
+            document.getElementById('merchPrice').value = merchPrice;
+            
+            // Reset quantity to 1
+            document.getElementById('quantity').value = 1;
+            
+            // Update the modal's title
+            const modalTitle = merchModal.querySelector('.modal-title');
+            modalTitle.textContent = 'Pembelian ' + merchName;
+            
+            // Update total price
+            updateTotalPrice();
+        });
+        
+        // Increase quantity button
+        const increaseBtn = document.querySelector('.increase-qty');
+        if (increaseBtn) {
+            increaseBtn.addEventListener('click', function() {
+                const qtyInput = document.getElementById('quantity');
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+                updateTotalPrice();
+            });
+        }
+        
+        // Decrease quantity button
+        const decreaseBtn = document.querySelector('.decrease-qty');
+        if (decreaseBtn) {
+            decreaseBtn.addEventListener('click', function() {
+                const qtyInput = document.getElementById('quantity');
+                if (parseInt(qtyInput.value) > 1) {
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+                    updateTotalPrice();
+                }
+            });
+        }
+        
+        // Update total price when quantity changes manually
+        const qtyInput = document.getElementById('quantity');
+        if (qtyInput) {
+            qtyInput.addEventListener('change', function() {
+                // Ensure minimum value is 1
+                if (parseInt(this.value) < 1) {
+                    this.value = 1;
+                }
+                updateTotalPrice();
+            });
+        }
+        
+        // Function to update total price
+        function updateTotalPrice() {
+            const price = parseInt(document.getElementById('merchPrice').value) || 0;
+            const qty = parseInt(document.getElementById('quantity').value) || 1;
+            const total = price * qty;
+            document.getElementById('totalPrice').textContent = 'Rp' + total.toLocaleString('id-ID');
+        }
+    });
+    </script>
 </body>
 </html>

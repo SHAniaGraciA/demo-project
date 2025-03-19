@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head"></head>
+<body>
+    <div th:replace="fragments/common :: navbar"></div>
+    
+    <div class="content-wrapper">
+        <div class="container">
+        <div th:if="${details != null}" class="card">
+            <h2><i class="fas fa-users icon"></i> Detail Kelompok</h2>
+            
+            <div class="mt-4">
+                <h3><i class="fas fa-user-graduate icon"></i> Informasi Mahasiswa</h3>
+                <p>Nama: <span th:text="${details.mahasiswa.nama}"></span></p>
+                <p>NPM: <span th:text="${details.mahasiswa.npm}"></span></p>
+                <p>Fakultas: <span th:text="${details.mahasiswa.fakultas}"></span></p>
+                <p>Nomor Kelompok: <span th:text="${details.nomorKelompok}"></span></p>
+            </div>
+            
+            <div class="mt-4">
+                <h3><i class="fas fa-chalkboard-teacher icon"></i> Informasi Mentor</h3>
+                <p>Nama Mentor: <span th:text="${details.mentor.nama}"></span></p>
+            </div>
+            
+            <div class="mt-4">
+                <h3><i class="fas fa-users icon"></i> Anggota Kelompok Lainnya</h3>
+                <ul class="list-unstyled">
+                    <li th:each="anggota : ${details.anggotaKelompok}" class="mb-2">
+                        <i class="fas fa-user icon"></i>
+                        <span th:text="${anggota.nama}"></span> - 
+                        <span th:text="${anggota.npm}"></span> - 
+                        <span th:text="${anggota.fakultas}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div th:unless="${details != null}" class="card">
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle icon"></i>
+                Mahasiswa dengan NPM tersebut tidak ditemukan.
+            </div>
+            <a href="/kelompok/cari-detail-kelompok" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/common :: footer"></div>
+</body>
+</html>
