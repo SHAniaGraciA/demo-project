@@ -1,9 +1,8 @@
 [build]
-builder = "NIXPACKS"
-buildCommand = "chmod +x ./gradlew && ./gradlew bootJar"
+builder = "DOCKERFILE"
+watchPatterns = ["build.gradle", "src/**"]
 
 [deploy]
-startCommand = "java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
