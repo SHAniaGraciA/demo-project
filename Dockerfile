@@ -1,10 +1,12 @@
-FROM gradle:7.6.1-jdk17 AS build
+FROM gradle:latest AS build
 WORKDIR /app
 COPY . .
-RUN ./gradlew bootJar --no-daemon
+RUN gradle build -x test
 
-FROM openjdk:17-slim
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/*.jar /app.jar
+
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+CMD ["java", "-jar", "/app.jar"]
